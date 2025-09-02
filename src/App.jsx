@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import flower from "/flower.avif";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,49 +8,96 @@ import './Marquee.css'; // 自訂 CSS
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
+  const [showNav, setShowNav] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0); // ✅ 記得加這個
   const imgRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(
-      imgRef.current,
-      { rotation: 0 },
-      {
-        rotation: 180,
-        ease: "none",
-        scrollTrigger: {
-          trigger: imgRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1,
-        },
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        // 🔻 往下滾 → 隱藏 nav
+        setShowNav(false);
+      } else {
+        // 🔺 往上滾 → 顯示 nav
+        setShowNav(true);
       }
-    );
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
+
+  useEffect(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: imgRef.current,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+      },
+    });
+
+    // 第一段：只旋轉
+    tl.to(imgRef.current, { rotation: 90, opacity: 1, scale: 1, ease: "none" });
+
+    // 第二段：繼續旋轉，同時放大並開始淡出
+    tl.to(imgRef.current, { rotation: 180, opacity: 0, scale: 2, ease: "none" });
   }, []);
 
+
   return (
-    <div className="d-flex flex-column justify-content-center align-items-center min-vh-100 w-100 text-center px-3">
-      {/* Badge */}
-      <div className="mb-4">
-        <span className="px-3 py-1 rounded-pill text-white small">
-          Hello, I'm Ilia 👋
-        </span>
-      </div>
+    <div className="w-100 text-center px-3 pt-5">
+
+      {/* 🔝 Navigation */}
+      <nav
+        className={`navbar navbar-dark bg-black fixed-top transition-nav ${showNav ? "show" : "hide"
+          }`}
+      >
+        <div className="container">
+          <div className="d-flex align-items-center mb-3">
+            <img
+              src="./profile.jpg"
+              alt="Ilia Chang"
+              className="rounded-circle me-3"
+              style={{ width: "40px", height: "40px" }}
+            />
+            <h6 className="fw-bold mb-0 text-white">Ilia Chang</h6>
+          </div>
+          <ul className="nav">
+            <li className="nav-item">
+              <a className="nav-link text-white" href="#projects">
+                Projects
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-white" href="#about">
+                About
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-white" href="#contact">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+
+
 
       {/* Headline */}
-      <h1 className="fw-light text-secondary lh-base mb-4 w-100 text-center display-3">
-        <span className="fw-bold text-white">Designing for the physical world, <br />coding for the digital one
+      <h1 className="fw-light text-secondary lh-base mb-4 w-100 text-center display-3 mt-5">
+        <span className="fw-bold text-white ">Designing for the physical world, <br />coding for the digital one
         </span>
       </h1>
 
-      {/* Button */}
-      <div className="mb-5">
-        <a
-          href="mailto:yourmail@example.com"
-          className="btn btn-outline-light rounded-pill px-4 py-2"
-        >
-          Email me ↗
-        </a>
-      </div>
 
       <div className="text-center">
         <img
@@ -61,20 +108,28 @@ export default function Hero() {
           style={{
             maxWidth: "500px",
             height: "auto",
-            filter: "drop-shadow(0 0 100px rgba(255,255,255,0.1))",
+            filter: "drop-shadow(0 0 100px rgba(255,255,255,0.2))",
+            position: "relative",
+            zIndex: 0,
           }}
         />
       </div>
 
 
-      <div className="text-center px-3 py-5 bg-black">
+      <div className="text-center px-3 py-5 bg-black" >
         {/* 標題 */}
-        <h2 className="fw-bold text-white mb-3">
+        <h2 className="fw-bold text-white mb-3 " style={{
+          position: "relative",
+          zIndex: 10,
+        }}>
           Design × Code: <span className="text-info">From CAD to 3D Web</span>
         </h2>
 
         {/* 說明文字 */}
-        <p className="text-secondary mx-auto" style={{ maxWidth: "800px", fontSize: "1.1rem" }}>
+        <p className="text-secondary mx-auto" style={{
+          maxWidth: "800px", fontSize: "1.1rem", position: "relative",
+          zIndex: 10,
+        }} >
 
           At the intersection of industrial design and web development, I don’t just build physical products — I create digital experiences. From CAD models to interactive 3D showcases, I help brands communicate their vision through design that engages, inspires, and sells.
 
@@ -84,34 +139,67 @@ export default function Hero() {
 
 
       {/* Projects Section */}
-      <div className="container my-5">
+      <div className="container my-5 " id="projects">
         <h2 className="text-white mb-4 fw-bold">My Best Projects</h2>
 
-        <p className="text-secondary mb-5">
+        <p className="text-secondary mb-3">
           Showcasing projects that blend industrial design and 3D web development —
           combining product thinking with immersive digital experiences.
         </p>
 
         <div className="row g-4 mb-5">
+          <div className="col-md-6" style={{ minHeight: "350px" }}>
+            <a
+              href="https://trinity-bice-one.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-decoration-none project-card"
+            >
+              <div className="p-4 bg-dark rounded shadow-sm h-100 d-flex flex-column justify-content-center align-items-center position-relative overflow-hidden">
+                {/* 背景圖片 */}
+                <div
+                  className="card-bg"
+                  style={{
+                    backgroundImage: "url('./trinity5.jpg')",
+                  }}
+                ></div>
+
+                {/* 文字 */}
+                <h3 className="text-white fw-bold mb-2 position-relative">
+                  Trinity Hi-Capa
+                </h3>
+                <p className="text-white position-relative">Airsoft Product Design</p>
+              </div>
+            </a>
+            <p className="text-secondary mt-2">
+              Industrial Design × 3D Web Development
+            </p>
+          </div>
+
           <div className="col-md-6">
-            <a href="https://trinity-bice-one.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-decoration-none">
-              <div className="p-4 bg-dark rounded shadow-sm h-100 d-flex flex-column justify-content-center align-items-center">
-                <h5 className="text-white mb-2">Trinity Hi-Capa</h5>
-                <p className="text-secondary">Airsoft Product Design</p>
+            <a
+              href="https://mouse-henna.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-decoration-none project-card"
+            >
+              <div className="p-4 bg-dark rounded shadow-sm h-100 d-flex flex-column justify-content-center align-items-center position-relative overflow-hidden">
+                {/* 背景圖片 */}
+                <div
+                  className="card-bg"
+                  style={{
+                    backgroundImage: "url('./mouse.jpg')",
+                  }}
+                ></div>
+
+                {/* 文字 */}
+                <h3 className="text-white fw-bold mb-2 position-relative">Xoskeleton</h3>
+                <p className="text-white position-relative">Mouse Design</p>
               </div>
             </a>
             <p className="text-secondary mt-2">Industrial Design × 3D Web Development</p>
           </div>
 
-          <div className="col-md-6">
-            <a href="https://mouse-henna.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-decoration-none">
-              <div className="p-4 bg-dark rounded shadow-sm h-100 d-flex flex-column justify-content-center align-items-center">
-                <h5 className="text-white mb-2">Xoskeleton</h5>
-                <p className="text-secondary">Mouse Design</p>
-              </div>
-            </a>
-            <p className="text-secondary mt-2">Industrial Design × 3D Web Development</p>
-          </div>
         </div>
       </div>
 
@@ -120,7 +208,7 @@ export default function Hero() {
 
 
 
-      <div className="container my-5">
+      <div className="container my-5 py-5" id="about">
         <div className="row align-items-stretch">
           {/* 左邊：圖片 */}
           <div className="col-12 col-md-4 d-flex">
@@ -183,38 +271,63 @@ export default function Hero() {
 
 
 
-      <div className="marquee-wrapper container">
-        <div>
-          <span>
-            Industrial Design · Web Design · UI/UX Design · Full-Stack Development · Creative 3D Web Development · React Native Mobile App Development
-          </span>
+      <div className="container text-center my-5" >
+
+        {/* 🔝 Summary / Headline */}
+        <h4 className="fw-bold text-secondary  text-white ">
+
+          From CAD to Code: Bringing Products into Interactive Web Experiences
+
+        </h4>
+        <hr className="border-secondary mb-3" />
+
+        <div className="row">
+          {/* Design Software */}
+          <div className="col-md-6 mb-4">
+            <h6 className="fw-bold text-secondary mb-2">Design Software</h6>
+            <div className="marquee-wrapper pb-0">
+              <p className="text-white">
+                SolidWorks · Fusion 360 · Rhino · KeyShot · Blender · Figma · Photoshop · Illustrator
+              </p>
+            </div>
+          </div>
+
+          {/* Prototyping & Fabrication */}
+          <div className="col-md-6 mb-4">
+            <h6 className="fw-bold text-secondary mb-2">Prototyping & Fabrication</h6>
+            <div className="marquee-wrapper pb-0">
+              <p className="text-white">
+                3D Printing · Laser Cutting · Clay Modeling · CNC Machining(Basic knowledge of G-code/M-code)
+              </p>
+            </div>
+          </div>
+
+          {/* Front-end Development */}
+          <div className="col-md-6 mb-4">
+            <h6 className="fw-bold text-secondary mb-2">Front-end Development</h6>
+            <div className="marquee-wrapper pb-0">
+              <p className="text-white">
+                React.js · Next.js · Three.js / React Three Fiber · Tailwind / Bootstrap CSS · GSAP
+              </p>
+            </div>
+          </div>
+
+          {/* Back-end Development */}
+          <div className="col-md-6 mb-4">
+            <h6 className="fw-bold text-secondary mb-2">Back-end Development</h6>
+            <div className="marquee-wrapper pb-0">
+              <p className="text-white">
+                Node.js · Express.js · SQL · RESTful API · Firebase
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div className="container text-center">
-
-      <h5 className="fw-bold text-secondary">Development</h5>
-  <div className="row">
-    {/* Design Tools */}
-    <div className="col-md-6 mb-4">
-    <div className="marquee-wrapper container">
-      <p className="text-white">
-        SolidWorks · Rhino · KeyShot · Blender · Figma · Photoshop · Illustrator
-      </p>
-    </div>
-    </div>
-
-    {/* Development Tools */}
-    <div className="col-md-6 mb-4">
-      <h5 className="fw-bold text-secondary">Development</h5>
-      <p className="text-white">
-        React.js · Three.js / React Three Fiber · Node.js · Express.js · React Native · SQL
-      </p>
-    </div>
-  </div>
-</div>
 
 
-      <div className="container my-5">
+
+      <div className="container my-5 py-5">
         <h2 className="text-white mb-5 fw-bold text-start mt-5">My Career</h2>
 
         {/* Career Item: GoodCode Club */}
@@ -223,7 +336,7 @@ export default function Hero() {
             <h5 className="text-white mb-2 fw-bold">Full-stack Web Developer
             </h5>
 
-            <h5 className="text-secondary mb-4"> GoodCode Club</h5>
+            <h5 className="text-secondary mb-4"> GoodCode Club · Toronto</h5>
             <p className="text-secondary ">2024 – Present</p>
           </div>
           <div className="col-12 col-md-7 ms-auto text-start">
@@ -242,9 +355,27 @@ export default function Hero() {
         {/* Career Item: Modify Tech */}
         <div className="row align-items-start mb-4">
           <div className="col-12 col-md-4 mb-2 mb-md-0 text-start">
+            <h5 className="text-white mb-2 fw-bold">Maker Lab Technician
+            </h5>
+            <h5 className="text-secondary mb-4">George Brown College · Toronto</h5>
+            <p className="text-secondary">2023 – 2024</p>
+          </div>
+          <div className="col-12 col-md-7 ms-auto text-start">
+            <p className="text-secondary">
+              I operated, managed, and maintained FDM and SLA 3D printers as well as laser
+              cutting machines in the Maker Lab. I also provided professional guidance to
+              optimize 3D models, achieving lower printing costs, greater structural strength,
+              and enhanced aesthetics.
+            </p>
+          </div> </div>
+        <hr className="border-secondary" />
+
+        {/* Career Item: Modify Tech */}
+        <div className="row align-items-start mb-4">
+          <div className="col-12 col-md-4 mb-2 mb-md-0 text-start">
             <h5 className="text-white mb-2 fw-bold">Industrial Designer
             </h5>
-            <h5 className="text-secondary mb-4"> Modify Tech</h5>
+            <h5 className="text-secondary mb-4"> Modify Tech · Taiwan</h5>
             <p className="text-secondary">2020 – 2022</p>
           </div>
           <div className="col-12 col-md-7 ms-auto text-start">
@@ -306,6 +437,65 @@ export default function Hero() {
       </div>
 
 
+
+
+
+
+      <footer className="bg-black text-white py-5 position-relative mt-5" id="contact">
+  <h1
+    className="fw-bold w-100 text-center"
+    style={{
+      fontSize: "clamp(4rem, 10vw, 9rem)",
+      bottom: "20px",
+      left: 0,
+      pointerEvents: "none",
+      background: "linear-gradient(180deg, #999, #333)", // 從灰到深灰
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+      backgroundClip: "text",
+      color: "transparent",
+    }}
+  >
+    ILIA CHANG
+  </h1>
+
+  <div className="container mt-5">
+    <div className="row">
+      {/* Left Info */}
+      <div className="col-md-6 mb-4">
+        <div className="d-flex align-items-center mb-3">
+          <img
+            src="./profile.jpg"
+            alt="Ilia Chang"
+            className="rounded-circle me-3"
+            style={{ width: "40px", height: "40px" }}
+          />
+          <h6 className="fw-bold mb-0">Ilia Chang</h6>
+        </div>
+
+        <p className="text-secondary text-start mb-0">changile010684@gmail.com</p>
+
+        {/* LinkedIn */}
+        <a
+          href="https://www.linkedin.com/in/ilechang/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="d-block text-secondary text-start mb-0 mt-3"
+        >
+          LinkedIn
+        </a>
+
+        {/* Projects Link */}
+        <a
+          href="#projects"
+          className="d-block text-secondary text-start mb-0 mt-2"
+        >
+          Projects
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
 
     </div >
   );

@@ -1,7 +1,7 @@
 .marquee-wrapper {
     position: relative;
     overflow: hidden;
-    width: 100%;              /* ✅ 不要滿版，居中顯示 */
+    width: 100%;
     margin: 0 auto;
     background: #111;
     border-radius: 12px;
@@ -9,11 +9,10 @@
     color: white;
   }
   
-  /* 跑馬燈 */
+  /* 靜態內容 */
   .marquee {
     display: inline-block;
     white-space: nowrap;
-    animation: marquee 15s linear infinite;
   }
   
   .marquee span {
@@ -21,37 +20,5 @@
     padding-right: 2rem;
     font-size: 1.25rem;
     font-weight: 500;
-  }
-  
-  /* 陰影遮罩 (兩側漸隱) */
-  .marquee-wrapper::before,
-  .marquee-wrapper::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 60px;           /* 陰影寬度 */
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-  }
-  
-  .marquee-wrapper::before {
-    left: 0;
-    background: linear-gradient(to right, #111 0%, transparent 100%);
-  }
-  
-  .marquee-wrapper::after {
-    right: 0;
-    background: linear-gradient(to left, #111 0%, transparent 100%);
-  }
-  
-  /* 動畫 */
-  @keyframes marquee {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
   }
   
