@@ -92,7 +92,7 @@ export default function Hero() {
 
 
       {/* Headline */}
-      <h1 className="fw-light text-secondary lh-base mb-4 w-100 text-center display-3 mt-5">
+      <h1 className="fw-light text-white lh-base mb-4 w-100 text-center display-3 mt-5">
         <span className="fw-bold text-white ">Designing for the physical world, <br />coding for the digital one
         </span>
       </h1>
@@ -124,7 +124,7 @@ export default function Hero() {
         </h2>
 
         {/* 說明文字 */}
-        <p className="text-secondary mx-auto" style={{
+        <p className="text-white mx-auto" style={{
           maxWidth: "800px", fontSize: "1.1rem", position: "relative",
           zIndex: 10,
         }} >
@@ -140,7 +140,7 @@ export default function Hero() {
       <div className="container my-5 " id="projects">
         <h2 className="text-white mb-4 fw-bold">My Best Projects</h2>
 
-        <p className="text-secondary mb-3">
+        <p className="text-white  mb-3">
           Showcasing projects that blend industrial design and 3D web development —
           combining product thinking with immersive digital experiences.
         </p>
@@ -230,10 +230,10 @@ export default function Hero() {
               </span>
             </div>
 
-            <h2 className="fw-light text-secondary mb-3">
+            <h2 className="fw-light text-white  mb-3">
               I am a <span className="fw-bold text-white">Design/Developer Hybrid</span>
             </h2>
-            <p className="text-secondary mb-4">
+            <p className="text-white  mb-4">
               With a foundation in industrial design, interaction design and full-stack
               development, I bridge research, CAD modeling, rendering, and web
               technologies into one continuous workflow. My approach ensures ideas don’t
@@ -282,7 +282,7 @@ export default function Hero() {
         <div className="row">
           {/* Design Software */}
           <div className="col-md-6 mb-4">
-            <h6 className="fw-bold text-secondary mb-2">Design Software</h6>
+            <h6 className="fw-bold text-white  mb-2">Design Software</h6>
             <div className="marquee-wrapper pb-0">
               <p className="text-white">
                 SolidWorks · Fusion 360 · Rhino · KeyShot · Blender · Figma · Photoshop · Illustrator
@@ -292,7 +292,7 @@ export default function Hero() {
 
           {/* Prototyping & Fabrication */}
           <div className="col-md-6 mb-4">
-            <h6 className="fw-bold text-secondary mb-2">Prototyping & Fabrication</h6>
+            <h6 className="fw-bold text-white  mb-2">Prototyping & Fabrication</h6>
             <div className="marquee-wrapper pb-0">
               <p className="text-white">
                 3D Printing · Laser Cutting · Clay Modeling · CNC Machining(Basic knowledge of G-code/M-code)
@@ -302,7 +302,7 @@ export default function Hero() {
 
           {/* Front-end Development */}
           <div className="col-md-6 mb-4">
-            <h6 className="fw-bold text-secondary mb-2">Front-end Development</h6>
+            <h6 className="fw-bold text-white mb-2">Front-end Development</h6>
             <div className="marquee-wrapper pb-0">
               <p className="text-white">
                 React.js · Next.js · Three.js / React Three Fiber · Tailwind / Bootstrap CSS · GSAP
@@ -312,7 +312,7 @@ export default function Hero() {
 
           {/* Back-end Development */}
           <div className="col-md-6 mb-4">
-            <h6 className="fw-bold text-secondary mb-2">Back-end Development</h6>
+            <h6 className="fw-bold text-white  mb-2">Back-end Development</h6>
             <div className="marquee-wrapper pb-0">
               <p className="text-white">
                 Node.js · Express.js · SQL · RESTful API · Firebase
@@ -338,7 +338,7 @@ export default function Hero() {
             <p className="text-secondary ">2024 – Present</p>
           </div>
           <div className="col-12 col-md-7 ms-auto text-start">
-            <p className="text-secondary">
+            <p className="text-white ">
               At GoodCode Club, I bridge design and engineering as a full-stack web
               developer specializing in the PERN stack (PostgreSQL, Express, React,
               Node.js). Beyond building robust e-commerce platforms, I craft immersive
@@ -359,7 +359,7 @@ export default function Hero() {
             <p className="text-secondary">2023 – 2024</p>
           </div>
           <div className="col-12 col-md-7 ms-auto text-start">
-            <p className="text-secondary">
+            <p className="text-white ">
               I operated, managed, and maintained FDM and SLA 3D printers as well as laser
               cutting machines in the Maker Lab. I also provided professional guidance to
               optimize 3D models, achieving lower printing costs, greater structural strength,
@@ -377,7 +377,7 @@ export default function Hero() {
             <p className="text-secondary">2020 – 2022</p>
           </div>
           <div className="col-12 col-md-7 ms-auto text-start">
-            <p className="text-secondary">
+            <p className="text-white ">
               At Modify Tech, I designed airsoft products with a focus on ergonomic
               optimization to ensure usability, mechanical design to ensure
               manufacturability, and cost control. I led a full-cycle pistol project
@@ -404,7 +404,7 @@ export default function Hero() {
             <p className="text-secondary">2023 – 2025</p>
           </div>
           <div className="col-12 col-md-7 ms-auto text-start">
-            <p className="text-secondary">
+            <p className="text-white ">
               Studying at George Brown College with a focus on interaction design,
               user experience, and applied digital technologies — equipping me with
               the skills to bridge design and technology in real-world projects.
@@ -423,7 +423,7 @@ export default function Hero() {
             <p className="text-secondary">2016 – 2020</p>
           </div>
           <div className="col-12 col-md-7 ms-auto text-start">
-            <p className="text-secondary">
+            <p className="text-white ">
               Completed a bachelor’s degree in Industrial Design, developing a strong
               foundation in product design, ergonomics, and CAD modeling while
               participating in hands-on studio and research projects.
@@ -471,14 +471,14 @@ export default function Hero() {
                 <h6 className="fw-bold mb-0">Ilia Chang</h6>
               </div>
 
-              <p className="text-secondary text-start mb-0">changile010684@gmail.com</p>
+              <p className="text-white text-start mb-0">changile010684@gmail.com</p>
 
               {/* LinkedIn */}
               <a
                 href="https://www.linkedin.com/in/ilechang/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="d-block text-secondary text-start mb-0 mt-3"
+                className="d-block text-white  text-start mb-0 mt-3"
               >
                 LinkedIn
               </a>
@@ -486,7 +486,7 @@ export default function Hero() {
               {/* Projects Link */}
               <a
                 href="#projects"
-                className="d-block text-secondary text-start mb-0 mt-2"
+                className="d-block text-white  text-start mb-0 mt-2"
               >
                 Projects
               </a>
