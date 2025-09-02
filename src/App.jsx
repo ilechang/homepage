@@ -92,7 +92,7 @@ export default function Hero() {
 
 
       {/* Headline */}
-      <h1 className="fw-light text-white lh-base mb-4 w-100 text-center display-3 mt-5">
+      <h1 className="fw-light text-white lh-base mb-4 w-100 text-center display-2 mt-5">
         <span className="fw-bold text-white ">Designing for the physical world, <br />coding for the digital one
         </span>
       </h1>
