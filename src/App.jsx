@@ -56,7 +56,7 @@ export default function Hero() {
       {/* 🔝 Navigation */}
       <nav
         className={`navbar navbar-dark bg-black fixed-top transition-nav ${showNav ? "show" : "hide"
-          }`}
+          } d-none d-md-flex`}  // ⬅️ 這裡加上 Bootstrap 響應式顯示控制
       >
         <div className="container">
           <div className="d-flex align-items-center mb-3">
@@ -91,7 +91,6 @@ export default function Hero() {
 
 
 
-
       {/* Headline */}
       <h1 className="fw-light text-secondary lh-base mb-4 w-100 text-center display-3 mt-5">
         <span className="fw-bold text-white ">Designing for the physical world, <br />coding for the digital one
@@ -99,12 +98,12 @@ export default function Hero() {
       </h1>
 
 
-      <div className="text-center">
+      <div className="d-flex justify-content-center align-items-center">
         <img
           ref={imgRef}
           src={flower}
           alt="Abstract Flower"
-          className="img-fluid d-inline-block"
+          className="img-fluid"
           style={{
             maxWidth: "500px",
             height: "auto",
@@ -114,7 +113,6 @@ export default function Hero() {
           }}
         />
       </div>
-
 
       <div className="text-center px-3 py-5 bg-black" >
         {/* 標題 */}
@@ -442,60 +440,60 @@ export default function Hero() {
 
 
       <footer className="bg-black text-white py-5 position-relative mt-5" id="contact">
-  <h1
-    className="fw-bold w-100 text-center"
-    style={{
-      fontSize: "clamp(4rem, 10vw, 9rem)",
-      bottom: "20px",
-      left: 0,
-      pointerEvents: "none",
-      background: "linear-gradient(180deg, #999, #333)", // 從灰到深灰
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      backgroundClip: "text",
-      color: "transparent",
-    }}
-  >
-    ILIA CHANG
-  </h1>
+        <h1
+          className="fw-bold w-100 text-center"
+          style={{
+            fontSize: "clamp(4rem, 10vw, 9rem)",
+            bottom: "20px",
+            left: 0,
+            pointerEvents: "none",
+            background: "linear-gradient(180deg, #999, #333)", // 從灰到深灰
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+            color: "transparent",
+          }}
+        >
+          ILIA CHANG
+        </h1>
 
-  <div className="container mt-5">
-    <div className="row">
-      {/* Left Info */}
-      <div className="col-md-6 mb-4">
-        <div className="d-flex align-items-center mb-3">
-          <img
-            src="./profile.jpg"
-            alt="Ilia Chang"
-            className="rounded-circle me-3"
-            style={{ width: "40px", height: "40px" }}
-          />
-          <h6 className="fw-bold mb-0">Ilia Chang</h6>
+        <div className="container mt-5">
+          <div className="row">
+            {/* Left Info */}
+            <div className="col-md-6 mb-4">
+              <div className="d-flex align-items-center mb-3">
+                <img
+                  src="./profile.jpg"
+                  alt="Ilia Chang"
+                  className="rounded-circle me-3"
+                  style={{ width: "40px", height: "40px" }}
+                />
+                <h6 className="fw-bold mb-0">Ilia Chang</h6>
+              </div>
+
+              <p className="text-secondary text-start mb-0">changile010684@gmail.com</p>
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/ilechang/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="d-block text-secondary text-start mb-0 mt-3"
+              >
+                LinkedIn
+              </a>
+
+              {/* Projects Link */}
+              <a
+                href="#projects"
+                className="d-block text-secondary text-start mb-0 mt-2"
+              >
+                Projects
+              </a>
+            </div>
+          </div>
         </div>
-
-        <p className="text-secondary text-start mb-0">changile010684@gmail.com</p>
-
-        {/* LinkedIn */}
-        <a
-          href="https://www.linkedin.com/in/ilechang/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="d-block text-secondary text-start mb-0 mt-3"
-        >
-          LinkedIn
-        </a>
-
-        {/* Projects Link */}
-        <a
-          href="#projects"
-          className="d-block text-secondary text-start mb-0 mt-2"
-        >
-          Projects
-        </a>
-      </div>
-    </div>
-  </div>
-</footer>
+      </footer>
 
     </div >
   );
