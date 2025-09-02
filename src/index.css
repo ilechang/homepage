@@ -1,31 +1,41 @@
 /* index.css 或 App.css */
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   background-color: black;
-  overflow-x: hidden; /* 禁止水平滾動 */
-  width: 100%;   
+  overflow-x: hidden;
+  /* 禁止水平滾動 */
+  width: 100%;
 }
+
 body {
   overflow-x: hidden;
 }
+
 .project-card .card-bg {
   position: absolute;
-  inset: 0; /* top:0, right:0, bottom:0, left:0 */
+  inset: 0;
+  /* top:0, right:0, bottom:0, left:0 */
   background-size: cover;
   background-position: center;
-  opacity: 0;                 /* 預設隱藏 */
+  opacity: 0;
+  /* 預設隱藏 (桌機 >1050px) */
   transition: opacity 0.4s ease;
   z-index: 0;
 }
 
 .project-card:hover .card-bg {
-  opacity: 0.6            /* hover 時淡入 */
+  opacity: 0.6;
+  /* hover 時淡入 (桌機 >1050px) */
 }
 
-.project-card h5,
-.project-card p {
-  z-index: 1;                 /* 保證文字在圖片上面 */
+/* ⬇️ 在 1050px 以下直接顯示圖片 */
+@media (max-width: 1050px) {
+  .project-card .card-bg {
+    opacity: 0.6 !important;
+    /* 直接顯示，不需要 hover */
+  }
 }
 
 
