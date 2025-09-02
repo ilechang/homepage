@@ -29,12 +29,12 @@ body {
   opacity: 0.6;
   /* hover 時淡入 (桌機 >1050px) */
 }
-
-/* ⬇️ 在 1050px 以下直接顯示圖片 */
+/* ⬇️ 在 1050px 以下直接顯示圖片 + 邊框 */
 @media (max-width: 1050px) {
   .project-card .card-bg {
-    opacity: 0.4 !important;
-    /* 直接顯示，不需要 hover */
+    opacity: 0.4 !important;   /* 直接顯示 */
+    border: 2px solid rgba(255, 255, 255, 1); /* 半透明白色邊框 */
+    border-radius:10px;       /* 圓角（和卡片一致） */
   }
 }
 

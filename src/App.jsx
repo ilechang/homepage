@@ -160,6 +160,7 @@ export default function Hero() {
                   className="card-bg"
                   style={{
                     backgroundImage: "url('./trinity5.jpg')",
+                    borderRadius: "10px", 
                   }}
                 ></div>
 
@@ -189,6 +190,7 @@ export default function Hero() {
                   className="card-bg"
                   style={{
                     backgroundImage: "url('./mouse.jpg')",
+                    borderRadius: "10px", 
                   }}
                 ></div>
 
