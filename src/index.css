@@ -33,7 +33,7 @@ body {
 /* ⬇️ 在 1050px 以下直接顯示圖片 */
 @media (max-width: 1050px) {
   .project-card .card-bg {
-    opacity: 0.6 !important;
+    opacity: 0.4 !important;
     /* 直接顯示，不需要 hover */
   }
 }
