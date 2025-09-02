@@ -282,7 +282,7 @@ export default function Hero() {
         <div className="row">
           {/* Design Software */}
           <div className="col-md-6 mb-4">
-            <h6 className="fw-bold text-white  mb-2">Design Software</h6>
+            <h6 className="fw-bold text-secondary  mb-2">Design Software</h6>
             <div className="marquee-wrapper pb-0">
               <p className="text-white">
                 SolidWorks · Fusion 360 · Rhino · KeyShot · Blender · Figma · Photoshop · Illustrator
@@ -292,7 +292,7 @@ export default function Hero() {
 
           {/* Prototyping & Fabrication */}
           <div className="col-md-6 mb-4">
-            <h6 className="fw-bold text-white  mb-2">Prototyping & Fabrication</h6>
+            <h6 className="fw-bold text-secondary  mb-2">Prototyping & Fabrication</h6>
             <div className="marquee-wrapper pb-0">
               <p className="text-white">
                 3D Printing · Laser Cutting · Clay Modeling · CNC Machining(Basic knowledge of G-code/M-code)
@@ -302,7 +302,7 @@ export default function Hero() {
 
           {/* Front-end Development */}
           <div className="col-md-6 mb-4">
-            <h6 className="fw-bold text-white mb-2">Front-end Development</h6>
+            <h6 className="fw-bold text-secondary mb-2">Front-end Development</h6>
             <div className="marquee-wrapper pb-0">
               <p className="text-white">
                 React.js · Next.js · Three.js / React Three Fiber · Tailwind / Bootstrap CSS · GSAP
@@ -312,7 +312,7 @@ export default function Hero() {
 
           {/* Back-end Development */}
           <div className="col-md-6 mb-4">
-            <h6 className="fw-bold text-white  mb-2">Back-end Development</h6>
+            <h6 className="fw-bold text-secondary  mb-2">Back-end Development</h6>
             <div className="marquee-wrapper pb-0">
               <p className="text-white">
                 Node.js · Express.js · SQL · RESTful API · Firebase
@@ -338,7 +338,7 @@ export default function Hero() {
             <p className="text-secondary ">2024 – Present</p>
           </div>
           <div className="col-12 col-md-7 ms-auto text-start">
-            <p className="text-white ">
+            <p className="text-secondary">
               At GoodCode Club, I bridge design and engineering as a full-stack web
               developer specializing in the PERN stack (PostgreSQL, Express, React,
               Node.js). Beyond building robust e-commerce platforms, I craft immersive
@@ -359,7 +359,7 @@ export default function Hero() {
             <p className="text-secondary">2023 – 2024</p>
           </div>
           <div className="col-12 col-md-7 ms-auto text-start">
-            <p className="text-white ">
+            <p className="text-secondary">
               I operated, managed, and maintained FDM and SLA 3D printers as well as laser
               cutting machines in the Maker Lab. I also provided professional guidance to
               optimize 3D models, achieving lower printing costs, greater structural strength,
@@ -377,7 +377,7 @@ export default function Hero() {
             <p className="text-secondary">2020 – 2022</p>
           </div>
           <div className="col-12 col-md-7 ms-auto text-start">
-            <p className="text-white ">
+            <p className="text-secondary ">
               At Modify Tech, I designed airsoft products with a focus on ergonomic
               optimization to ensure usability, mechanical design to ensure
               manufacturability, and cost control. I led a full-cycle pistol project
@@ -404,7 +404,7 @@ export default function Hero() {
             <p className="text-secondary">2023 – 2025</p>
           </div>
           <div className="col-12 col-md-7 ms-auto text-start">
-            <p className="text-white ">
+            <p className="text-secondary">
               Studying at George Brown College with a focus on interaction design,
               user experience, and applied digital technologies — equipping me with
               the skills to bridge design and technology in real-world projects.
@@ -423,7 +423,7 @@ export default function Hero() {
             <p className="text-secondary">2016 – 2020</p>
           </div>
           <div className="col-12 col-md-7 ms-auto text-start">
-            <p className="text-white ">
+            <p className="text-secondary ">
               Completed a bachelor’s degree in Industrial Design, developing a strong
               foundation in product design, ergonomics, and CAD modeling while
               participating in hands-on studio and research projects.
