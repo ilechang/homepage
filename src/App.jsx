@@ -136,75 +136,75 @@ export default function Hero() {
 
 
 
-    {/* Projects Section */}
-<div className="container my-5" id="projects">
-  <h2 className="text-white mb-4 fw-bold">My Best Projects</h2>
+      {/* Projects Section */}
+      <div className="container my-5" id="projects">
+        <h2 className="text-white mb-4 fw-bold">My Best Projects</h2>
 
-  <p className="text-white mb-3">
-    Showcasing projects that blend industrial design and 3D web development — 
-    combining product thinking with immersive digital experiences.
-  </p>
+        <p className="text-white mb-3">
+          Showcasing projects that blend industrial design and 3D web development —
+          combining product thinking with immersive digital experiences.
+        </p>
 
-  <div className="row g-4 mb-5">
-    {/* Project 1 */}
-    <div className="col-md-6" style={{ minHeight: "350px" }}>
-      <a
-        href="https://trinity-bice-one.vercel.app/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-decoration-none project-card"
-      >
-        <div className="p-4 bg-dark rounded shadow-sm h-100 d-flex flex-column justify-content-center align-items-center position-relative overflow-hidden">
-          {/* 背景圖片 */}
-          <div
-            className="card-bg"
-            style={{
-              backgroundImage: "url('./trinity5.jpg')",
-            }}
-          ></div>
+        <div className="row g-4 mb-5">
+          {/* Project 1 */}
+          <div className="col-md-6 mt-5" style={{ minHeight: "350px" }}>
+            <a
+              href="https://trinity-bice-one.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-decoration-none project-card"
+            >
+              <div className="p-4 bg-dark rounded shadow-sm h-100 d-flex flex-column justify-content-center align-items-center position-relative overflow-hidden">
+                {/* 背景圖片 */}
+                <div
+                  className="card-bg"
+                  style={{
+                    backgroundImage: "url('./trinity5.jpg')",
+                  }}
+                ></div>
 
-          {/* 文字 */}
-          <h3 className="text-white fw-bold mb-2 position-relative">
-            Trinity Hi-Capa
-          </h3>
-          <p className="text-white position-relative">Airsoft Product Design</p>
+                {/* 文字 */}
+                <h3 className="text-white fw-bold mb-2 position-relative">
+                  Trinity Hi-Capa
+                </h3>
+                <p className="text-white position-relative">Airsoft Product Design</p>
+              </div>
+            </a>
+            <p className="text-secondary mt-2 ">
+              Industrial Design × 3D Web Development
+            </p>
+          </div>
+
+          {/* Project 2 */}
+          <div className="col-md-6 mt-5" style={{ minHeight: "350px" }}>
+            <a
+              href="https://mouse-henna.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-decoration-none project-card"
+            >
+              <div className="p-4 bg-dark rounded shadow-sm h-100 d-flex flex-column justify-content-center align-items-center position-relative overflow-hidden">
+                {/* 背景圖片 */}
+                <div
+                  className="card-bg"
+                  style={{
+                    backgroundImage: "url('./mouse.jpg')",
+                  }}
+                ></div>
+
+                {/* 文字 */}
+                <h3 className="text-white fw-bold mb-2 position-relative">
+                  Xoskeleton
+                </h3>
+                <p className="text-white position-relative">Mouse Design</p>
+              </div>
+            </a>
+            <p className="text-secondary mt-2">
+              Industrial Design × 3D Web Development
+            </p>
+          </div>
         </div>
-      </a>
-      <p className="text-secondary mt-2">
-        Industrial Design × 3D Web Development
-      </p>
-    </div>
-
-    {/* Project 2 */}
-    <div className="col-md-6" style={{ minHeight: "350px" }}>
-      <a
-        href="https://mouse-henna.vercel.app/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-decoration-none project-card"
-      >
-        <div className="p-4 bg-dark rounded shadow-sm h-100 d-flex flex-column justify-content-center align-items-center position-relative overflow-hidden">
-          {/* 背景圖片 */}
-          <div
-            className="card-bg"
-            style={{
-              backgroundImage: "url('./mouse.jpg')",
-            }}
-          ></div>
-
-          {/* 文字 */}
-          <h3 className="text-white fw-bold mb-2 position-relative">
-            Xoskeleton
-          </h3>
-          <p className="text-white position-relative">Mouse Design</p>
-        </div>
-      </a>
-      <p className="text-secondary mt-2">
-        Industrial Design × 3D Web Development
-      </p>
-    </div>
-  </div>
-</div>
+      </div>
 
 
 
