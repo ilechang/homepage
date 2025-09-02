@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useEffect, useState, useRef } from "react";
-import flower from "/flower.avif";
+import flower from "/flower.webp";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import './Marquee.css'; // 自訂 CSS
@@ -61,7 +61,7 @@ export default function Hero() {
         <div className="container">
           <div className="d-flex align-items-center mb-3">
             <img
-              src="./profile.jpg"
+              src="./profile.webp"
               alt="Ilia Chang"
               className="rounded-circle me-3"
               style={{ width: "40px", height: "40px" }}
