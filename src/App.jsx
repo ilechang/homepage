@@ -6,20 +6,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import './Marquee.css'; // 自訂 CSS
 
 
-const RandomHighlightText = () => {
-  const text = "From Static to Interactive";
 
-  // 拆字 & 隨機決定哪些加上 text-info
-  const letters = text.split("").map((char, index) => {
-    const isHighlighted = Math.random() > 0.7; // 30% 機率加上 text-info
-    return (
-      <span key={index} className={isHighlighted ? "text-info" : ""}>
-        {char}
-      </span>
-    );
-  });
-  }
-  
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
@@ -27,7 +15,7 @@ export default function Hero() {
   const [lastScrollY, setLastScrollY] = useState(0); // ✅ 記得加這個
   const imgRef = useRef(null);
 
-  
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,7 +55,25 @@ export default function Hero() {
   }, []);
 
 
+  const fullText = "From Static to Interactive";
+  const [displayedText, setDisplayedText] = useState("");
+  const [isTypingDone, setIsTypingDone] = useState(false);
+
+
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      setDisplayedText(fullText.slice(0, i + 1));
+      i++;
+      if (i === fullText.length) clearInterval(interval);
+    }, 100); // 打字速度 (毫秒)
+
+    return () => clearInterval(interval);
+  }, []);
+
+
   return (
+
     <div className="w-100 text-center px-3 pt-5">
 
       {/* 🔝 Navigation */}
@@ -110,8 +116,11 @@ export default function Hero() {
 
       {/* Headline */}
       <h1 className="fw-light text-white lh-base mb-4 w-100 text-center display-2 mt-5">
-        <span className="fw-bold text-white ">Designing Products, Coding Experiences, <br/>
-<div className='text-info '><i> From Static to Interactive</i></div>
+        <span className="fw-bold text-white ">Industrial Designer × Web Developer <br />
+          <div className="text-info typing-text">
+            <i>{displayedText}</i>
+            {!isTypingDone && <span className="cursor"></span>}
+          </div>
         </span>
       </h1>
 
@@ -134,7 +143,7 @@ export default function Hero() {
 
       <div className="text-center px-3 py-5 bg-black" >
         {/* 標題 */}
-       
+
         {/* 說明文字 */}
         <p className="text-white mx-auto" style={{
           maxWidth: "1100px", fontSize: "1.1rem", position: "relative",

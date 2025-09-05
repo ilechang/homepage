@@ -51,3 +51,23 @@ body {
 .transition-nav.show {
   transform: translateY(0);
 }
+
+.cursor {
+  display: inline-block;
+  width: 2px;          /* 窄窄的直線才像游標 */
+  height: 1em;         /* 高度跟字體一樣 */
+  background-color: #0dcaf0; /* 藍色游標 */
+  margin-left: 15px;
+  margin-bottom: 15px;
+  animation: blink 1s step-start infinite;
+  vertical-align: bottom;
+}
+
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
