@@ -5,12 +5,29 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import './Marquee.css'; // 自訂 CSS
 
+
+const RandomHighlightText = () => {
+  const text = "From Static to Interactive";
+
+  // 拆字 & 隨機決定哪些加上 text-info
+  const letters = text.split("").map((char, index) => {
+    const isHighlighted = Math.random() > 0.7; // 30% 機率加上 text-info
+    return (
+      <span key={index} className={isHighlighted ? "text-info" : ""}>
+        {char}
+      </span>
+    );
+  });
+  }
+  
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
   const [showNav, setShowNav] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0); // ✅ 記得加這個
   const imgRef = useRef(null);
+
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -93,7 +110,8 @@ export default function Hero() {
 
       {/* Headline */}
       <h1 className="fw-light text-white lh-base mb-4 w-100 text-center display-2 mt-5">
-        <span className="fw-bold text-white ">Designing for the physical world, <br />coding for the digital one
+        <span className="fw-bold text-white ">Designing Products, Coding Experiences, <br/>
+<div className='text-info '><i> From Static to Interactive</i></div>
         </span>
       </h1>
 
@@ -116,20 +134,14 @@ export default function Hero() {
 
       <div className="text-center px-3 py-5 bg-black" >
         {/* 標題 */}
-        <h2 className="fw-bold text-white mb-3 " style={{
-          position: "relative",
-          zIndex: 10,
-        }}>
-          Design × Code: <span className="text-info">From CAD to 3D Web</span>
-        </h2>
-
+       
         {/* 說明文字 */}
         <p className="text-white mx-auto" style={{
-          maxWidth: "800px", fontSize: "1.1rem", position: "relative",
+          maxWidth: "1100px", fontSize: "1.1rem", position: "relative",
           zIndex: 10,
         }} >
 
-          At the intersection of industrial design and web development, I don’t just build physical products — I create digital experiences. From CAD models to interactive 3D showcases, I help brands communicate their vision through design that engages, inspires, and sells.
+          At the intersection of industrial design and web development, I create not just physical products but digital experiences. Moving beyond static renders, I build interactive 3D showcases that bring products to life, offering brands immersive, business-driven presentations that inspire engagement and deliver impact.
 
         </p>
       </div>
@@ -138,7 +150,7 @@ export default function Hero() {
 
       {/* Projects Section */}
       <div className="container my-5" id="projects">
-        <h2 className="text-white mb-4 fw-bold">My Best Projects</h2>
+        <h2 className="text-white mb-4 fw-bold">My Projects</h2>
 
         <p className="text-white mb-3">
           Showcasing projects that blend industrial design and 3D web development —
@@ -160,7 +172,7 @@ export default function Hero() {
                   className="card-bg"
                   style={{
                     backgroundImage: "url('./trinity5.jpg')",
-                    borderRadius: "10px", 
+                    borderRadius: "10px",
                   }}
                 ></div>
 
@@ -190,7 +202,7 @@ export default function Hero() {
                   className="card-bg"
                   style={{
                     backgroundImage: "url('./mouse.jpg')",
-                    borderRadius: "10px", 
+                    borderRadius: "10px",
                   }}
                 ></div>
 
@@ -205,6 +217,37 @@ export default function Hero() {
               Industrial Design × 3D Web Development
             </p>
           </div>
+
+          {/* Project 1 */}
+          <div className="col-md-6 mt-5" style={{ minHeight: "350px" }}>
+            <a
+              href="https://config-sandy.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-decoration-none project-card"
+            >
+              <div className="p-4 bg-dark rounded shadow-sm h-100 d-flex flex-column justify-content-center align-items-center position-relative overflow-hidden">
+                {/* 背景圖片 */}
+                <div
+                  className="card-bg"
+                  style={{
+                    backgroundImage: "url('./project3.jpg')",
+                    borderRadius: "10px",
+                  }}
+                ></div>
+
+                {/* 文字 */}
+                <h3 className="text-white fw-bold mb-2 position-relative">
+                  Interactive Product Customizer
+                </h3>
+                <p className="text-white position-relative">Demo: Real-time customization of an airsoft pistol</p>
+              </div>
+            </a>
+            <p className="text-secondary mt-2 ">
+              Interactive Experience× 3D Web Development
+            </p>
+          </div>
+
         </div>
       </div>
 
@@ -240,11 +283,7 @@ export default function Hero() {
               I am a <span className="fw-bold text-white">Design/Developer Hybrid</span>
             </h2>
             <p className="text-white  mb-4">
-              With a foundation in industrial design, interaction design and full-stack
-              development, I bridge research, CAD modeling, rendering, and web
-              technologies into one continuous workflow. My approach ensures ideas don’t
-              just stay on paper — they evolve into manufacturable products and immersive
-              3D experiences that deliver lasting impact.
+              With a foundation in industrial design, interaction design, and web development, I bridge traditional product design workflows with modern web-based experiences, creating one continuous process. My approach ensures that ideas don’t just stay on paper — they evolve into manufacturable products and immersive 3D showcases that deliver real business impact.
             </p>
 
 
