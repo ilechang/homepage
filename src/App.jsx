@@ -55,7 +55,7 @@ export default function Hero() {
   }, []);
 
 
-  const fullText = "From Static to Interactive";
+  const fullText = "From Static Renders to Interactive 3D";
   const [displayedText, setDisplayedText] = useState("");
   const [isTypingDone, setIsTypingDone] = useState(false);
 
