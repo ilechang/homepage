@@ -116,7 +116,7 @@ export default function Hero() {
 
       {/* Headline */}
       <h1 className="fw-light text-white lh-base mb-4 w-100 text-center display-2 mt-5">
-        <span className="fw-bold text-white ">Industrial Designer × Web Developer <br />
+        <span className="fw-bold text-white ">Industrial Design × Interactive 3D Visualization <br />
           <div className="text-info typing-text">
             <i>{displayedText}</i>
             {!isTypingDone && <span className="cursor"></span>}
