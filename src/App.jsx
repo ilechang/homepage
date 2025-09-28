@@ -14,8 +14,20 @@ export default function Hero() {
   const [showNav, setShowNav] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0); // ✅ 記得加這個
   const imgRef = useRef(null);
+  const [show, setShow] = useState(false);
+  const [index, setIndex] = useState(0);
+  const images = [
+    { src: "./30.jpg", alt: "Godzilla sketch" },
+    { src: "./29.jpg", alt: "Motorbike sketch" },
+  ];
 
+  const handlePrev = () => {
+    setIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
 
+  const handleNext = () => {
+    setIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -255,6 +267,117 @@ export default function Hero() {
             <p className="text-secondary mt-2 ">
               Interactive Experience× 3D Web Development
             </p>
+
+
+
+
+          </div>
+
+          {/* Project 1 */}
+          <div className="col-md-6 mt-5" style={{ minHeight: "350px" }}>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setShow(true);
+                setIndex(0); // 預設從第一張開始
+              }}
+              className="text-decoration-none project-card"
+            >
+              <div className="p-4 bg-dark rounded shadow-sm h-100 d-flex flex-column justify-content-center align-items-center position-relative overflow-hidden">
+                <div
+                  className="card-bg"
+                  style={{
+                    backgroundImage: "url('./30.jpg')",
+                    borderRadius: "10px",
+                  }}
+                ></div>
+
+                {/* 預覽文字 */}
+                <h3 className="text-white fw-bold mb-2 position-relative">
+                  Hand Rendering
+                </h3>
+                <p className="text-white position-relative">
+                  Marker × Colored Pencil × Pastel
+                </p>
+              </div>
+            </a>
+
+            {/* Overlay (浮動視窗) */}
+            {show && (
+              <div
+                className="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-dark bg-opacity-75"
+                style={{ zIndex: 1050 }}
+                onClick={() => setShow(false)}
+              >
+                <div
+                  className="position-relative d-flex justify-content-center align-items-center"
+                  style={{ maxWidth: "90%", maxHeight: "90%" }}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {/* 圖片容器 (讓文字可以疊在裡面) */}
+                  <div className="position-relative">
+                    <img
+                      src={images[index].src}
+                      alt={images[index].alt}
+                      className="img-fluid"
+                      style={{ maxHeight: "90vh", objectFit: "contain" }}
+                    />
+
+                    {/* 疊在圖片下方的文字 */}
+                    <div
+                      className="position-absolute bottom-0 start-50 translate-middle-x w-100 text-center py-2"
+                      style={{
+
+                        color: index === 0 ? "white" : "black",
+                        fontWeight: "bold",
+                        fontSize: "1.2rem",
+                      }}
+                    >
+                      Marker × Colored Pencil × Pastel
+                    </div>
+                  </div>
+
+                  {/* Prev 按鈕 */}
+                  {/* Prev 按鈕 */}
+                  <button
+                    onClick={handlePrev}
+                    className="btn btn-light border-dark fw-bold position-absolute top-50 start-0 translate-middle-y d-flex justify-content-center align-items-center"
+                    style={{
+                      opacity: 0.9,
+                      fontSize: "2rem",
+                      width: "60px",
+                      height: "60px",
+                      borderWidth: "2px",
+                      borderRadius: "50%",
+                      padding: 0, // 移除預設 padding
+                    }}
+                  >
+                    ‹
+                  </button>
+
+                  {/* Next 按鈕 */}
+                  <button
+                    onClick={handleNext}
+                    className="btn btn-light border-dark fw-bold position-absolute top-50 end-0 translate-middle-y d-flex justify-content-center align-items-center"
+                    style={{
+                      opacity: 0.9,
+                      fontSize: "2rem",
+                      width: "60px",
+                      height: "60px",
+                      borderWidth: "2px",
+                      borderRadius: "50%",
+                      padding: 0,
+                    }}
+                  >
+                    ›
+                  </button>
+
+
+                </div>
+              </div>
+            )}
+
           </div>
 
         </div>
