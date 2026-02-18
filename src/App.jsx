@@ -129,7 +129,7 @@ export default function Hero() {
       {/* Headline */}
       <h1 className="fw-light text-white lh-base mb-4 w-100 text-center display-2 mt-5">
         <span className="fw-bold text-white ">From Concept to Mass Production<br />
-          <div className="text-info typing-text" style={{fontSize:"50px"}}>
+          <div className="text-info typing-text" style={{ fontSize: "50px" }}>
             <i>{displayedText}</i>
             {!isTypingDone && <span className="cursor"></span>}
           </div>
@@ -162,8 +162,8 @@ export default function Hero() {
           zIndex: 10,
         }} >
 
-       Led production-ready product development supported by <strong>three utility patents</strong>.
-Bridging aesthetics, ergonomics, engineering, and manufacturing.
+          Led production-ready product development supported by <strong>three utility patents</strong>.
+          Bridging aesthetics, ergonomics, engineering, and manufacturing.
         </p>
       </div>
 
@@ -173,7 +173,7 @@ Bridging aesthetics, ergonomics, engineering, and manufacturing.
       <div className="container my-5" id="projects">
         <h2 className="text-white mb-4 fw-bold">My Projects</h2>
 
-       
+
         <div className="row g-4 mb-5">
           {/* Project 1 */}
           <div className="col-md-6 mt-5" style={{ minHeight: "350px" }}>
@@ -206,10 +206,10 @@ Bridging aesthetics, ergonomics, engineering, and manufacturing.
           </div>
 
 
-               {/* Project 1 */}
+          {/* Project 1 */}
           <div className="col-md-6 mt-5" style={{ minHeight: "350px" }}>
             <a
-              href="https://trinity-bice-one.vercel.app/"
+              href="https://split-brown-nine.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-decoration-none project-card"
@@ -235,7 +235,7 @@ Bridging aesthetics, ergonomics, engineering, and manufacturing.
               Industrial Design Project
             </p>
           </div>
-          
+
 
           {/* Project 2 */}
           <div className="col-md-6 mt-5" style={{ minHeight: "350px" }}>
@@ -434,7 +434,7 @@ Bridging aesthetics, ergonomics, engineering, and manufacturing.
           {/* 右邊：文字內容 */}
           <div className="col-12 ms-auto col-md-7 text-white d-flex flex-column justify-content-center p-4 text-center text-md-start">
             <div className="mb-3">
-              <span className="px-3 py-1 rounded-pill bg-dark text-light small">
+              <span className="px-3 py-1 rounded-pill bg-dark text-light small ">
                 About
               </span>
             </div>
@@ -448,24 +448,23 @@ Bridging aesthetics, ergonomics, engineering, and manufacturing.
 
 
             {/* 統計數字 */}
-            <div className="row text-center text-md-start">
-              <div className="col-6 col-md-3 mb-4">
-                <h4 className="fw-bold text-white">3</h4>
-                <p className="small text-secondary mb-0">Design Patents</p>
+            <div className="row mt-3 text-white">
+              <div className="col-6 col-md-4 text-end">
+                <h4 className="fw-bold">3</h4>
+                <p className="small text-secondary mb-0">Utility Patents</p>
               </div>
-              <div className="col-6 col-md-3 mb-4">
-                <h4 className="fw-bold text-white">4</h4>
+
+              <div className="col-6 col-md-4 text-end">
+                <h4 className="fw-bold">4</h4>
                 <p className="small text-secondary mb-0">Years of Experience</p>
               </div>
-              <div className="col-6 col-md-3 mb-4">
-                <h4 className="fw-bold text-white">10,000+</h4>
+
+              <div className="col-6 col-md-4 text-end">
+                <h4 className="fw-bold">10,000+</h4>
                 <p className="small text-secondary mb-0">Hours of Designing</p>
               </div>
-              <div className="col-6 col-md-3 mb-4">
-                <h4 className="fw-bold text-white">10,000+</h4>
-                <p className="small text-secondary mb-0">Hours of Development</p>
-              </div>
             </div>
+
           </div>
         </div>
       </div>
