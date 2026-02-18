@@ -442,10 +442,12 @@ export default function Hero() {
             <h2 className="fw-light text-white  mb-3">
               I am a <span className="fw-bold text-white">Design/Developer Hybrid</span>
             </h2>
-            <p className="text-white  mb-4">
-              With a foundation in industrial design, interaction design, and web development, I bridge traditional product design workflows with modern web-based experiences, creating one continuous process. My approach ensures that ideas don’t just stay on paper — they evolve into manufacturable products and immersive 3D showcases that deliver real business impact.
+            <p className="text-white mb-4">
+            With four years of professional experience in industrial design, I have developed products involving 3D printing, laser cutting, metal casting and plastic injection molding, working closely with real manufacturing constraints, tooling considerations, and production requirements. My approach balances design intent with feasibility, ensuring concepts transition smoothly into manufacturable solutions.
+</p>
+            <p className="text-white mb-4">
+             Beyond static renderings, I create high-quality product visualization animations and develop immersive online presentations by integrating AI tools and interactive technologies — extending physical products into compelling digital experiences.
             </p>
-
 
             {/* 統計數字 */}
             <div className="row mt-3 text-white">
@@ -489,7 +491,7 @@ export default function Hero() {
             <h6 className="fw-bold text-secondary  mb-2">Design Software</h6>
             <div className="marquee-wrapper pb-0">
               <p className="text-white">
-                SolidWorks · Fusion 360 · Rhino · KeyShot · Blender · Figma · Photoshop · Illustrator
+                SolidWorks · Fusion 360 · Rhino · KeyShot · PrusaSlicer · Figma · Photoshop · Illustrator
               </p>
             </div>
           </div>
@@ -504,96 +506,126 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Front-end Development */}
-          <div className="col-md-6 mb-4">
-            <h6 className="fw-bold text-secondary mb-2">Front-end Development</h6>
-            <div className="marquee-wrapper pb-0">
-              <p className="text-white">
-                React.js · Next.js · Three.js / React Three Fiber · Tailwind / Bootstrap CSS · GSAP
-              </p>
-            </div>
-          </div>
-
-          {/* Back-end Development */}
-          <div className="col-md-6 mb-4">
-            <h6 className="fw-bold text-secondary  mb-2">Back-end Development</h6>
-            <div className="marquee-wrapper pb-0">
-              <p className="text-white">
-                Node.js · Express.js · SQL · RESTful API · Firebase
-              </p>
-            </div>
-          </div>
-
+      
         </div>
       </div>
 
 
+   <div className="container my-5 pb-5">
+  <h2 className="text-white mb-5 fw-bold text-start mt-5">My Career</h2>
 
-      <div className="container my-5 py-5">
-        <h2 className="text-white mb-5 fw-bold text-start mt-5">My Career</h2>
+  <div className="row align-items-start mb-4">
+    <div className="col-12 col-md-4 mb-2 mb-md-0 text-start">
+      <h5 className="text-white mb-2 fw-bold">
+        Product Engineer
+      </h5>
 
-        {/* Career Item: GoodCode Club */}
-        <div className="row align-items-start mb-4">
-          <div className="col-12 col-md-4 mb-2 mb-md-0 text-start">
-            <h5 className="text-white mb-2 fw-bold">Full-stack Web Developer
-            </h5>
+      <h5 className="text-secondary mb-4">
+        PCL Graphics · Markham
+      </h5>
 
-            <h5 className="text-secondary mb-4"> GoodCode Club · Toronto</h5>
-            <p className="text-secondary ">2024 – Present</p>
-          </div>
-          <div className="col-12 col-md-7 ms-auto text-start">
-            <p className="text-secondary">
-              At GoodCode Club, I bridge design and engineering as a full-stack web
-              developer specializing in the PERN stack (PostgreSQL, Express, React,
-              Node.js). Beyond building robust e-commerce platforms, I craft immersive
-              3D web experiences with Three.js/React Three Fiber and extend ideas into
-              mobile with React Native — delivering seamless, cross-platform digital
-              solutions that engage users on every screen.
-            </p>
-          </div>
-        </div>
-        <hr className="border-secondary" />
+      <p className="text-secondary">
+        2025/10 – 2026/02
+      </p>
+    </div>
 
-        {/* Career Item: Modify Tech */}
-        <div className="row align-items-start mb-4">
-          <div className="col-12 col-md-4 mb-2 mb-md-0 text-start">
-            <h5 className="text-white mb-2 fw-bold">Maker Lab Technician
-            </h5>
-            <h5 className="text-secondary mb-4">George Brown College · Toronto</h5>
-            <p className="text-secondary">2023 – 2024</p>
-          </div>
-          <div className="col-12 col-md-7 ms-auto text-start">
-            <p className="text-secondary">
-              I operated, managed, and maintained FDM and SLA 3D printers as well as laser
-              cutting machines in the Maker Lab. I also provided professional guidance to
-              optimize 3D models, achieving lower printing costs, greater structural strength,
-              and enhanced aesthetics.
-            </p>
-          </div> </div>
-        <hr className="border-secondary" />
+    <div className="col-12 col-md-7 ms-auto text-start">
+      <p className="text-secondary">
+        At PCL Graphics, I primarily developed cosmetic retail displays for Estée Lauder. I created 3D models for prototyping and production, preparing files for 3D printing and optimizing print parameters in PrusaSlicer to balance quality, structural integrity, and production efficiency.
 
-        {/* Career Item: Modify Tech */}
-        <div className="row align-items-start mb-4">
-          <div className="col-12 col-md-4 mb-2 mb-md-0 text-start">
-            <h5 className="text-white mb-2 fw-bold">Industrial Designer
-            </h5>
-            <h5 className="text-secondary mb-4"> Modify Tech · Taiwan</h5>
-            <p className="text-secondary">2020 – 2022</p>
-          </div>
-          <div className="col-12 col-md-7 ms-auto text-start">
-            <p className="text-secondary ">
-              At Modify Tech, I designed airsoft products with a focus on ergonomic
-              optimization to ensure usability, mechanical design to ensure
-              manufacturability, and cost control. I led a full-cycle pistol project
-              from initial research and CAD modeling through 3D printing, CNC
-              prototyping, and cost evaluation — successfully bringing the design
-              into mass production. The pistol was ultimately awarded three design
-              patents and exported to North American and European markets.
-            </p>
-          </div>
-        </div>
-        <hr className="border-secondary" />
-      </div>
+I also produced detailed engineering drawings for CNC routing and laser cutting processes to support fabrication.
+      </p>
+    </div>
+  </div>
+  {/* Career Item: GoodCode Club */}
+  <div className="row align-items-start mb-4">
+    <div className="col-12 col-md-4 mb-2 mb-md-0 text-start">
+      <h5 className="text-white mb-2 fw-bold">
+        Full-stack Web Developer
+      </h5>
+
+      <h5 className="text-secondary mb-4">
+        GoodCode Club · Toronto
+      </h5>
+
+      <p className="text-secondary">
+        2024/04 – 2025/10
+      </p>
+    </div>
+
+    <div className="col-12 col-md-7 ms-auto text-start">
+      <p className="text-secondary">
+        At GoodCode Club, I bridge design and engineering as a full-stack web
+        developer specializing in the PERN stack (PostgreSQL, Express, React,
+        Node.js). Beyond building robust e-commerce platforms, I craft immersive
+        3D web experiences with Three.js/React Three Fiber and extend ideas into
+        mobile with React Native — delivering seamless, cross-platform digital
+        solutions that engage users on every screen.
+      </p>
+    </div>
+  </div>
+
+  <hr className="border-secondary" />
+
+  {/* Career Item: Maker Lab */}
+  <div className="row align-items-start mb-4">
+    <div className="col-12 col-md-4 mb-2 mb-md-0 text-start">
+      <h5 className="text-white mb-2 fw-bold">
+        Maker Lab Technician
+      </h5>
+
+      <h5 className="text-secondary mb-4">
+        George Brown College · Toronto
+      </h5>
+
+      <p className="text-secondary">
+        2023 – 2024
+      </p>
+    </div>
+
+    <div className="col-12 col-md-7 ms-auto text-start">
+      <p className="text-secondary">
+        I operated, managed, and maintained FDM and SLA 3D printers as well as laser cutters in the Maker Lab. I also provided professional guidance to
+        optimize 3D models, achieving lower printing costs, greater structural strength,
+        and enhanced aesthetics.
+      </p>
+    </div>
+  </div>
+
+  <hr className="border-secondary" />
+
+  {/* Career Item: Modify Tech */}
+  <div className="row align-items-start mb-4">
+    <div className="col-12 col-md-4 mb-2 mb-md-0 text-start">
+      <h5 className="text-white mb-2 fw-bold">
+        Industrial Designer
+      </h5>
+
+      <h5 className="text-secondary mb-4">
+        Modify Tech · Taiwan
+      </h5>
+
+      <p className="text-secondary">
+        2020 – 2022
+      </p>
+    </div>
+
+    <div className="col-12 col-md-7 ms-auto text-start">
+      <p className="text-secondary">
+        At Modify Tech, I designed airsoft products with a focus on ergonomic
+        optimization to ensure usability, mechanical design to ensure
+        manufacturability, and cost control. I led a full-cycle pistol project
+        from initial research and CAD modeling through 3D printing, CNC
+        prototyping, and cost evaluation — successfully bringing the design
+        into mass production. The pistol was ultimately awarded three design
+        patents and exported to North American and European markets.
+      </p>
+    </div>
+  </div>
+
+  <hr className="border-secondary" />
+</div>
+
 
 
 
