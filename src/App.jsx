@@ -67,7 +67,7 @@ export default function Hero() {
   }, []);
 
 
-  const fullText = "From Static Renders to Interactive 3D";
+  const fullText = "Industrial Designer with Production Experience";
   const [displayedText, setDisplayedText] = useState("");
   const [isTypingDone, setIsTypingDone] = useState(false);
 
@@ -78,7 +78,7 @@ export default function Hero() {
       setDisplayedText(fullText.slice(0, i + 1));
       i++;
       if (i === fullText.length) clearInterval(interval);
-    }, 100); // 打字速度 (毫秒)
+    }, 50); // 打字速度 (毫秒)
 
     return () => clearInterval(interval);
   }, []);
@@ -128,8 +128,8 @@ export default function Hero() {
 
       {/* Headline */}
       <h1 className="fw-light text-white lh-base mb-4 w-100 text-center display-2 mt-5">
-        <span className="fw-bold text-white ">Industrial Design × Interactive 3D Visualization <br />
-          <div className="text-info typing-text">
+        <span className="fw-bold text-white ">From Concept to Mass Production<br />
+          <div className="text-info typing-text" style={{fontSize:"50px"}}>
             <i>{displayedText}</i>
             {!isTypingDone && <span className="cursor"></span>}
           </div>
@@ -162,8 +162,8 @@ export default function Hero() {
           zIndex: 10,
         }} >
 
-          At the intersection of industrial design and web development, I create not just physical products but digital experiences. Moving beyond static renders, I build interactive 3D showcases that bring products to life, offering brands immersive, business-driven presentations that inspire engagement and deliver impact.
-
+       Led production-ready product development supported by <strong>three utility patents</strong>.
+Bridging aesthetics, ergonomics, engineering, and manufacturing.
         </p>
       </div>
 
@@ -173,11 +173,7 @@ export default function Hero() {
       <div className="container my-5" id="projects">
         <h2 className="text-white mb-4 fw-bold">My Projects</h2>
 
-        <p className="text-white mb-3">
-          Showcasing projects that blend industrial design and 3D web development —
-          combining product thinking with immersive digital experiences.
-        </p>
-
+       
         <div className="row g-4 mb-5">
           {/* Project 1 */}
           <div className="col-md-6 mt-5" style={{ minHeight: "350px" }}>
@@ -201,13 +197,45 @@ export default function Hero() {
                 <h3 className="text-white fw-bold mb-2 position-relative">
                   Trinity Hi-Capa
                 </h3>
-                <p className="text-white position-relative">Airsoft Product Design</p>
+                <p className="text-white position-relative">Production Airsoft Pistol · Designed for Market Release</p>
               </div>
             </a>
             <p className="text-secondary mt-2 ">
-              Industrial Design × 3D Web Development
+              Industrial Design Project
             </p>
           </div>
+
+
+               {/* Project 1 */}
+          <div className="col-md-6 mt-5" style={{ minHeight: "350px" }}>
+            <a
+              href="https://trinity-bice-one.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-decoration-none project-card"
+            >
+              <div className="p-4 bg-dark rounded shadow-sm h-100 d-flex flex-column justify-content-center align-items-center position-relative overflow-hidden">
+                {/* 背景圖片 */}
+                <div
+                  className="card-bg"
+                  style={{
+                    backgroundImage: "url('./trinity5.jpg')",
+                    borderRadius: "10px",
+                  }}
+                ></div>
+
+                {/* 文字 */}
+                <h3 className="text-white fw-bold mb-2 position-relative">
+                  Split Hi-Capa
+                </h3>
+                <p className="text-white position-relative">Concept Development Based on Trinity Hi-Capa Platform</p>
+              </div>
+            </a>
+            <p className="text-secondary mt-2 ">
+              Industrial Design Project
+            </p>
+          </div>
+          
 
           {/* Project 2 */}
           <div className="col-md-6 mt-5" style={{ minHeight: "350px" }}>
@@ -235,7 +263,7 @@ export default function Hero() {
               </div>
             </a>
             <p className="text-secondary mt-2">
-              Industrial Design × 3D Web Development
+              Industrial Design Project
             </p>
           </div>
 
@@ -261,11 +289,11 @@ export default function Hero() {
                 <h3 className="text-white fw-bold mb-2 position-relative">
                   Interactive Product Customizer
                 </h3>
-                <p className="text-white position-relative">Demo: Real-time customization of an airsoft pistol</p>
+                <p className="text-white position-relative">Demo: Real-time customization of Trinity Hi-Capa</p>
               </div>
             </a>
             <p className="text-secondary mt-2 ">
-              Interactive Experience× 3D Web Development
+              Digital Product Design & Development
             </p>
 
 
