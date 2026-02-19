@@ -163,7 +163,7 @@ export default function Hero() {
         }} >
 
           Led production-ready product development supported by <strong>three utility patents</strong>.
-          Bridging aesthetics, ergonomics, engineering, value engineering, and manufacturing.
+          Bridging usability, engineering, value engineering, and manufacturing.
         </p>
       </div>
 
@@ -259,7 +259,7 @@ export default function Hero() {
                 <h3 className="text-white fw-bold mb-2 position-relative">
                   Xoskeleton
                 </h3>
-                <p className="text-white position-relative">Gaming / Production Mouse Design</p>
+                <p className="text-white position-relative">Hybrid Gaming & Work Mouse</p>
               </div>
             </a>
             <p className="text-secondary mt-2">
