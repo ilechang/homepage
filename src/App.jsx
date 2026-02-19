@@ -163,7 +163,7 @@ export default function Hero() {
         }} >
 
           Led production-ready product development supported by <strong>three utility patents</strong>.
-          Bridging aesthetics, ergonomics, engineering, and manufacturing.
+          Bridging aesthetics, ergonomics, engineering, value engineering, and manufacturing.
         </p>
       </div>
 
@@ -440,10 +440,12 @@ export default function Hero() {
             </div>
 
             <h2 className="fw-light text-white  mb-3">
-              <span className="fw-bold text-white">Bridging Manufacturing & Digital Presentation</span>
+              <span className="fw-bold text-white">Designing for Usability, Production Feasibility & Cost Efficiency</span>
             </h2>
             <p className="text-white mb-4">
-            With four years of professional experience in industrial design, I have developed products involving 3D printing, laser cutting, metal casting and plastic injection molding, working closely with real manufacturing constraints, tooling considerations, and production requirements. My approach balances design intent with feasibility, ensuring concepts transition smoothly into manufacturable solutions.
+           With four years of professional experience in industrial design, I develop products with a strong focus on user experience, manufacturing feasibility, and cost awareness. My work spans 3D printing, laser cutting, metal casting, and plastic injection molding, where I collaborate closely with real-world production constraints and tooling considerations.
+
+I approach each project by aligning design intent with engineering practicality—ensuring that concepts are not only functional and intuitive, but also scalable, manufacturable, and economically viable.
 </p>
             <p className="text-white mb-4">
              Beyond static renderings, I create high-quality product visualization animations and develop immersive online presentations by integrating AI tools and interactive technologies — extending physical products into compelling digital experiences.
@@ -462,8 +464,8 @@ export default function Hero() {
               </div>
 
               <div className="col-6 col-md-4 text-end">
-                <h4 className="fw-bold">10,000+</h4>
-                <p className="small text-secondary mb-0">Hours of Designing</p>
+                <h4 className="fw-bold">10+</h4>
+                <p className="small text-secondary mb-0">Countries of Distribution</p>
               </div>
             </div>
 
