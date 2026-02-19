@@ -219,7 +219,7 @@ export default function Hero() {
                 <div
                   className="card-bg"
                   style={{
-                    backgroundImage: "url('./trinity5.jpg')",
+                    backgroundImage: "url('./123.png')",
                     borderRadius: "10px",
                   }}
                 ></div>
@@ -228,7 +228,7 @@ export default function Hero() {
                 <h3 className="text-white fw-bold mb-2 position-relative">
                   Split Hi-Capa
                 </h3>
-                <p className="text-white position-relative">Concept Development Based on Trinity Hi-Capa Platform</p>
+                <p className="text-white position-relative">Advanced Concept Development Based on Trinity Hi-Capa</p>
               </div>
             </a>
             <p className="text-secondary mt-2 ">
@@ -259,7 +259,7 @@ export default function Hero() {
                 <h3 className="text-white fw-bold mb-2 position-relative">
                   Xoskeleton
                 </h3>
-                <p className="text-white position-relative">Mouse Design</p>
+                <p className="text-white position-relative">Gaming / Production Mouse Design</p>
               </div>
             </a>
             <p className="text-secondary mt-2">
@@ -440,7 +440,7 @@ export default function Hero() {
             </div>
 
             <h2 className="fw-light text-white  mb-3">
-              I am a <span className="fw-bold text-white">Design/Developer Hybrid</span>
+              <span className="fw-bold text-white">Bridging Manufacturing & Digital Presentation</span>
             </h2>
             <p className="text-white mb-4">
             With four years of professional experience in industrial design, I have developed products involving 3D printing, laser cutting, metal casting and plastic injection molding, working closely with real manufacturing constraints, tooling considerations, and production requirements. My approach balances design intent with feasibility, ensuring concepts transition smoothly into manufacturable solutions.
@@ -475,40 +475,55 @@ export default function Hero() {
 
 
 
-      <div className="container text-center my-5" >
+   <div className="container text-center my-5" >
 
-        {/* 🔝 Summary / Headline */}
-        <h4 className="fw-bold text-secondary  text-white ">
+  {/* 🔝 Summary / Headline */}
+  <h3 className="fw-bold text-secondary text-white">
+    Product Development Capabilities
+  </h3>
+  <hr className="border-secondary mb-3" />
 
-          From CAD to Code: Bringing Products into Interactive Web Experiences
+  <div className="row">
 
-        </h4>
-        <hr className="border-secondary mb-3" />
-
-        <div className="row">
-          {/* Design Software */}
-          <div className="col-md-6 mb-4">
-            <h6 className="fw-bold text-secondary  mb-2">Design Software</h6>
-            <div className="marquee-wrapper pb-0">
-              <p className="text-white">
-                SolidWorks · Fusion 360 · Rhino · KeyShot · PrusaSlicer · Figma · Photoshop · Illustrator
-              </p>
-            </div>
-          </div>
-
-          {/* Prototyping & Fabrication */}
-          <div className="col-md-6 mb-4">
-            <h6 className="fw-bold text-secondary  mb-2">Prototyping & Fabrication</h6>
-            <div className="marquee-wrapper pb-0">
-              <p className="text-white">
-                3D Printing · Laser Cutting · Clay Modeling · CNC Machining(Basic knowledge of G-code/M-code)
-              </p>
-            </div>
-          </div>
-
-      
-        </div>
+    {/* Design Software */}
+    <div className="col-md-6 mb-4 ">
+      <h6 className="fw-bold text-secondary mb-2">
+        Core Design & Engineering Tools
+      </h6>
+      <div className="marquee-wrapper pb-0 px-3" style={{background:"rgb(50, 50, 50)"}}>
+        <p className="text-white">
+          SolidWorks · Fusion 360 · Rhino · KeyShot · PrusaSlicer
+        </p>
       </div>
+    </div>
+
+    {/* Prototyping & Fabrication */}
+    <div className="col-md-6 mb-4">
+      <h6 className="fw-bold text-secondary mb-2">
+        Prototyping Skills
+      </h6>
+      <div className="marquee-wrapper pb-0 px-3" style={{background:"rgb(50, 50, 50)"}}>
+        <p className="text-white">
+          3D Printing · Clay Modeling · Laser Cutting · CNC Machining  
+        </p>
+      </div>
+    </div>
+
+    {/* Digital Presentation */}
+    <div className="col-md-6 mb-4">
+      <h6 className="fw-bold text-secondary mb-2">
+        Visualization & Interactive Presentation
+      </h6>
+      <div className="marquee-wrapper pb-0 px-3" style={{background:"rgb(50, 50, 50)"}}>
+        <p className="text-white">
+          Figma · Photoshop · Illustrator · HTML · CSS · JavaScript · React · Three.js 
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
 
    <div className="container my-5 pb-5">
@@ -641,9 +656,7 @@ I also produced detailed engineering drawings for CNC routing and laser cutting 
           </div>
           <div className="col-12 col-md-7 ms-auto text-start">
             <p className="text-secondary">
-              Studying at George Brown College with a focus on interaction design,
-              user experience, and applied digital technologies — equipping me with
-              the skills to bridge design and technology in real-world projects.
+             George Brown College graduate in Interaction Design, with a focus on user experience and applied digital technologies.
             </p>
           </div>
         </div>
