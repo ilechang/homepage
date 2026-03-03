@@ -340,7 +340,7 @@ const videos = [
         CAD
       </h3>
       <p className="text-white position-relative">
-        Surface Modeling · Parametric Design · Sheet Metal
+        Solidworks Surface Modeling · Parametric Design · Sheet Metal
       </p>
     </div>
   </a>
