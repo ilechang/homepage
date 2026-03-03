@@ -20,6 +20,14 @@ export default function Hero() {
     { src: "./30.jpg", alt: "Godzilla sketch" },
     { src: "./29.jpg", alt: "Motorbike sketch" },
   ];
+const [showCAD, setShowCAD] = useState(false);
+const [videoIndex, setVideoIndex] = useState(0);
+
+const videos = [
+  { src: "/chair.mp4", title: "Chair : SolidWorks Surface Modeling" },
+  { src: "/hairdryer.mp4", title: "Hairdryer : SolidWorks Surface Modeling" },
+  { src: "/sheetmetal.mp4", title: "Control enclosure : SolidWorks Surface Modeling" },
+];
 
   const handlePrev = () => {
     setIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
@@ -301,8 +309,46 @@ export default function Hero() {
 
           </div>
 
+<div className="col-12 mt-5">
+
+<br /><br />
+<br /><br />
+        <h2 className="text-white mb-4 fw-bold">
+    Technical Skill Showcase
+  </h2>
+</div>
+<div className="col-md-6 mb-5" style={{ minHeight: "350px" }}>
+  <a
+    href="#"
+    onClick={(e) => {
+      e.preventDefault();
+      setShowCAD(true);
+      setVideoIndex(0);
+    }}
+    className="text-decoration-none project-card"
+  >
+    <div className="p-4 bg-dark rounded shadow-sm h-100 d-flex flex-column justify-content-center align-items-center position-relative overflow-hidden">
+      <div
+        className="card-bg"
+        style={{
+        
+          borderRadius: "10px",
+        }}
+      ></div>
+
+      <h3 className="text-white fw-bold mb-2 position-relative">
+        CAD
+      </h3>
+      <p className="text-white position-relative">
+        Surface Modeling · Parametric Design · Sheet Metal
+      </p>
+    </div>
+  </a>
+</div>
+
+
           {/* Project 1 */}
-          <div className="col-md-6 mt-5" style={{ minHeight: "350px" }}>
+          <div className="col-md-6 mb-5" style={{ minHeight: "350px" }}>
             <a
               href="#"
               onClick={(e) => {
@@ -331,6 +377,74 @@ export default function Hero() {
               </div>
             </a>
 
+
+
+{showCAD && (
+  <div
+    className="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-dark bg-opacity-75"
+    style={{ zIndex: 1050 }}
+    onClick={() => setShowCAD(false)}
+  >
+    <div
+      className="position-relative d-flex justify-content-center align-items-center"
+      style={{ maxWidth: "90%", maxHeight: "90%" }}
+      onClick={(e) => e.stopPropagation()}
+    >
+      <div className="position-relative text-center">
+        <video
+          src={videos[videoIndex].src}
+          controls
+          autoPlay
+          className="img-fluid"
+          style={{ maxHeight: "80vh" }}
+        />
+
+        <div
+          className="mt-3 text-white fw-bold"
+          style={{ fontSize: "1.2rem" }}
+        >
+          {videos[videoIndex].title}
+        </div>
+      </div>
+
+      {/* Prev */}
+      <button
+        onClick={() =>
+          setVideoIndex((prev) =>
+            prev === 0 ? videos.length - 1 : prev - 1
+          )
+        }
+        className="btn btn-light border-dark fw-bold position-absolute top-50 start-0 translate-middle-y"
+        style={{
+          fontSize: "2rem",
+          width: "60px",
+          height: "60px",
+          borderRadius: "50%",
+        }}
+      >
+        ‹
+      </button>
+
+      {/* Next */}
+      <button
+        onClick={() =>
+          setVideoIndex((prev) =>
+            prev === videos.length - 1 ? 0 : prev + 1
+          )
+        }
+        className="btn btn-light border-dark fw-bold position-absolute top-50 end-0 translate-middle-y"
+        style={{
+          fontSize: "2rem",
+          width: "60px",
+          height: "60px",
+          borderRadius: "50%",
+        }}
+      >
+        ›
+      </button>
+    </div>
+  </div>
+)}
             {/* Overlay (浮動視窗) */}
             {show && (
               <div
@@ -412,8 +526,8 @@ export default function Hero() {
       </div>
 
 
-
-
+<br />
+<br />
 
       <div className="container my-5 py-5" id="about">
         <div className="row align-items-stretch">
@@ -488,7 +602,7 @@ I approach each project by aligning design intent with engineering practicality�
   <div className="row">
 
     {/* Design Software */}
-    <div className="col-md-6 mb-4 ">
+    <div className="col-md-6 my-4 ">
       <h6 className="fw-bold text-secondary mb-2">
         Core Design & Engineering Tools
       </h6>
@@ -500,7 +614,7 @@ I approach each project by aligning design intent with engineering practicality�
     </div>
 
     {/* Prototyping & Fabrication */}
-    <div className="col-md-6 mb-4">
+    <div className="col-md-6 my-4">
       <h6 className="fw-bold text-secondary mb-2">
         Prototyping Skills
       </h6>
@@ -510,9 +624,22 @@ I approach each project by aligning design intent with engineering practicality�
         </p>
       </div>
     </div>
-
+{/* Manufacturing Knowledge */}
+<div className="col-md-6 my-4">
+  <h6 className="fw-bold text-secondary mb-2">
+    Manufacturing Knowledge
+  </h6>
+  <div
+    className="marquee-wrapper pb-0 px-3"
+    style={{ background: "rgb(50, 50, 50)" }}
+  >
+    <p className="text-white">
+      Injection Molding · Metal Casting · Sheet Metal · Aluminum Extrusion · CNC Machining · Laser Cutting 
+    </p>
+  </div>
+</div>
     {/* Digital Presentation */}
-    <div className="col-md-6 mb-4">
+    <div className="col-md-6 my-4">
       <h6 className="fw-bold text-secondary mb-2">
         Visualization & Interactive Presentation
       </h6>
@@ -526,7 +653,7 @@ I approach each project by aligning design intent with engineering practicality�
   </div>
 </div>
 
-
+<br />
 
    <div className="container my-5 pb-5">
   <h2 className="text-white mb-5 fw-bold text-start mt-5">My Career</h2>
