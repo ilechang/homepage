@@ -24,6 +24,7 @@ const [showCAD, setShowCAD] = useState(false);
 const [videoIndex, setVideoIndex] = useState(0);
 
 const videos = [
+   { src: "/chair2.mp4", title: "Chair : SolidWorks Surface Modeling" },
   { src: "/chair.mp4", title: "Chair : SolidWorks Surface Modeling" },
   { src: "/hairdryer.mp4", title: "Hairdryer : SolidWorks Surface Modeling" },
   { src: "/sheetmetal.mp4", title: "Control enclosure : SolidWorks Surface Modeling" },
